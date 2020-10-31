@@ -19,6 +19,7 @@ App.set('layout', 'layouts/layout')
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true
 })
+
 //connect to the database
 const db = mongoose.connection
 db.on('error', error => console.error(error))
