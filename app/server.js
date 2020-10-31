@@ -1,11 +1,11 @@
 //load the .env files if the environment is not production
 if(process.env.NODE_ENV !== 'production'){
-    require('dotenv').parse()
+    require('dotenv').config()
 }
 
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
-const indexRouter = require('./routes/index')
+const indexRouter = require('../routes/index')
 const mongoose = require('mongoose')
 
 const App = express()
