@@ -10,6 +10,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 
 const mongoose = require('mongoose')
 
@@ -41,5 +42,6 @@ App.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
 App.use('/', indexRouter)
 
 App.use('/authors', authorRouter)
+App.use('/books', bookRouter)
 
 App.listen(process.env.PORT || 3000)

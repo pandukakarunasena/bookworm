@@ -5,7 +5,7 @@ const router = express.Router()
 const Author = require('../models/author')
 
 
-//get all authors
+////get all authors
 //mongoose give find({}) with the empty object to return all the docs
 //also we can give find({something}) to search in the docs
 router.get('/', async (req,res) => {
@@ -30,7 +30,7 @@ router.get('/', async (req,res) => {
     }
 })
 
-//get an author
+//get tp the add author page
 router.get('/new', (req,res) => {
     res.render('authors/new', {author: new Author()})
 })
