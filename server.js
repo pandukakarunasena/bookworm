@@ -5,8 +5,14 @@ if(process.env.NODE_ENV !== 'production'){
 
 const express = require('express')
 const expressLayouts = require('express-ejs-layouts')
+const bodyParser = require('body-parser')
+
+
 const indexRouter = require('./routes/index')
+const authorRouter = require('./routes/authors')
+
 const mongoose = require('mongoose')
+
 
 const App = express()
 
@@ -29,8 +35,11 @@ db.once('open', () => console.log('connected to mongoose'))
 App.use(expressLayouts)
 //where our styles js files would be
 App.use(express.static('public'))
-
+//read the input fields
+App.use(bodyParser.urlencoded({limit:'10mb', extended:false}))
 //call the endpoints as middlewares from the router file
 App.use('/', indexRouter)
+
+App.use('/authors', authorRouter)
 
 App.listen(process.env.PORT || 3000)
