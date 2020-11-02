@@ -1,10 +1,24 @@
 <h2>Search Books</h2>
-<form action="/books" method="get">
-    <label>Name</label>
-    <input type="text" name="name" value="<%=searchOptions.name%>" autofocus>
+<form action="/books" method="get" >
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" value="<%=searchOptions.name%>" autofocus>
+    </div>
+    <div>
+        <label>Published After</label>
+        <input type="date" name="publishAfter" value="<%=searchOptions.publishAfter%>" autofocus>
+    </div>
+    <div>
+        <label>Published Before</label>
+        <input type="date" name="publishBefore" value="<%=searchOptions.publishBefore%>" autofocus>
+    </div>
     <button type="submit">Search</button>
 </form>
 <br>
-<% books.forEach(book => { %>
-    <div><%= book.name %></div>
-<% }) %> 
+<div>
+    <% books.forEach(book => { %>
+        <% if (book.coverImagePath){ %>
+            <img height="150" width="100" src="<%=book.coverImagePath%> ">
+        <% } %>
+    <% }) %> 
+</div>

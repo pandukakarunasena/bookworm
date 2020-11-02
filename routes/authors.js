@@ -30,7 +30,7 @@ router.get('/', async (req,res) => {
     }
 })
 
-//get tp the add author page
+//get to the add author page
 router.get('/new', (req,res) => {
     res.render('authors/new', {author: new Author()})
 })
