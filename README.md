@@ -1,4 +1,4 @@
-# bookworm is simple to record the books you have read 
+# bookworm is simple web app to record the books you have read 
 
 This is created by using	
  ejs
